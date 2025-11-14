@@ -634,6 +634,7 @@ Rails emits structured events across the framework covering controllers, jobs, d
 | Key          | Value               |
 | ------------ | ------------------- |
 | `:key`       | Secure token        |
+| `:duration_ms` | Total duration of the process |
 
 ### Active Storage: Storage Service
 
@@ -643,30 +644,35 @@ Rails emits structured events across the framework covering controllers, jobs, d
 | ------------ | ---------------------------- |
 | `:key`       | Secure token                 |
 | `:checksum`  | Checksum to ensure integrity |
-
-#### `active_storage.service_streaming_download`
-
-| Key          | Value               |
-| ------------ | ------------------- |
-| `:key`       | Secure token        |
+| `:duration_ms` | Total duration of the process |
 
 #### `active_storage.service_download`
 
 | Key          | Value               |
 | ------------ | ------------------- |
 | `:key`       | Secure token        |
+| `:duration_ms` | Total duration of the process |
+
+#### `active_storage.service_streaming_download`
+
+| Key          | Value               |
+| ------------ | ------------------- |
+| `:key`       | Secure token        |
+| `:duration_ms` | Total duration of the process |
 
 #### `active_storage.service_delete`
 
 | Key          | Value               |
 | ------------ | ------------------- |
 | `:key`       | Secure token        |
+| `:duration_ms` | Total duration of the process |
 
 #### `active_storage.service_delete_prefixed`
 
 | Key          | Value               |
 | ------------ | ------------------- |
 | `:prefix`    | Key prefix          |
+| `:duration_ms` | Total duration of the process |
 
 #### `active_storage.service_exist`
 
@@ -674,6 +680,7 @@ Rails emits structured events across the framework covering controllers, jobs, d
 | ------------ | --------------------------- |
 | `:key`       | Secure token                |
 | `:exist`     | File or blob exists or not  |
+| `:duration_ms` | Total duration of the process |
 
 #### `active_storage.service_url`
 
@@ -681,6 +688,7 @@ Rails emits structured events across the framework covering controllers, jobs, d
 | ------------ | ------------------- |
 | `:key`       | Secure token        |
 | `:url`       | Generated URL       |
+| `:duration_ms` | Total duration of the process |
 
 #### `active_storage.service_mirror`
 
@@ -688,4 +696,5 @@ Rails emits structured events across the framework covering controllers, jobs, d
 | --------------- | -------------------------------- |
 | `:key`          | Secure token                     |
 | `:checksum`  | Checksum to ensure integrity |
+| `:duration_ms` | Total duration of the process |
 
