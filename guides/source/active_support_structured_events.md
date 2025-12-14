@@ -445,7 +445,7 @@ Which results in the following events when the job runs:
   "name": "orders.export.started",
   "payload": { "count": 42 },
   "context": {
-    "job_id": "abcd-1234",
+    "job_id": "abcd-1234"
   }
 }
 ```
@@ -507,6 +507,7 @@ Although both systems relate to what happens inside the application, they solve 
 * metadata is attached automatically
 * built for observability systems
 * subscribers export data externally
+
 Relationship to ActiveSupport::Notifications
 --------------------------------------------
 
@@ -520,10 +521,6 @@ In practice, you'll often use both: `ActiveSupport::Notifications` for performan
 
 ### How ActiveSupport::Notifications and Structured Events Work Together
 
-`ActiveSupport::StructuredEventSubscriber` bridges the two systems:
-
-1. listens to Notifications (e.g., `"process_action.action_controller"`)
-2. transforms them
 `ActiveSupport::StructuredEventSubscriber` bridges the two systems by:
 
 1. listening to notifications (e.g., `"process_action.action_controller"`)
@@ -567,8 +564,6 @@ Security
 Hash-based payloads are filtered automatically using [`config.filter_parameters`][].
 
 [Event objects][Event Objects] must be filtered by the subscriber, e.g. with [ActiveSupport::ParameterFilter][].
-Security
---------
 
 Structured Events respects your application's privacy settings by automatically filtering sensitive data from hash-based payloads using [`config.filter_parameters`][]. This means if you've set up filters for passwords, tokens, or credit card numbers elsewhere in your app, those same filters apply here.
 
